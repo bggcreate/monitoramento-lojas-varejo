@@ -1,0 +1,63 @@
+<div class="container-fluid pt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Gestão de Demandas</h1>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-demanda">
+            <i class="bi bi-plus-circle"></i> Adicionar Demanda
+        </button>
+    </div>
+
+    <ul class="nav nav-tabs" id="demandasTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pendentes-tab" data-bs-toggle="tab" data-bs-target="#pendentes" type="button" role="tab" aria-controls="pendentes" aria-selected="true">Demandas Pendentes</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="historico-tab" data-bs-toggle="tab" data-bs-target="#historico" type="button" role="tab" aria-controls="historico" aria-selected="false">Histórico</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="demandasTabContent">
+        <div class="tab-pane fade show active" id="pendentes" role="tabpanel" aria-labelledby="pendentes-tab">
+            <div class="pt-4" id="demandas-pendentes-container"></div>
+        </div>
+        <div class="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab">
+            <div class="pt-4" id="demandas-historico-container"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Adicionar Nova Demanda -->
+<div class="modal fade" id="modal-add-demanda" tabindex="-1" aria-labelledby="modalAddDemandaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="form-add-demanda">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddDemandaLabel">Adicionar Nova Demanda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="demanda-loja" class="form-label">Loja</label>
+                        <select class="form-select" id="demanda-loja" name="loja_nome" required></select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="demanda-descricao" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="demanda-descricao" name="descricao" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="demanda-tag" class="form-label">Prioridade</label>
+                        <select class="form-select" id="demanda-tag" name="tag" required>
+                            <option value="Normal">Normal</option>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Urgente">Urgente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar Demanda</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

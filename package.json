@@ -1,0 +1,18 @@
+{
+  "name": "gerador-relatorios-lojas",
+  "version": "1.0.0",
+  "description": "Sistema para geração e consulta de relatórios de lojas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "sqlite3": "^5.1.7",
+    "pdfkit": "^0.15.0",
+    "exceljs": "^4.4.0"
+  }
+}

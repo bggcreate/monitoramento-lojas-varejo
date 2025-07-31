@@ -1,0 +1,44 @@
+
+<div id="page-content">
+    <h3 class="mb-4">Histórico de Atividades</h3>
+
+    <!-- Abas de Navegação -->
+    <ul class="nav nav-tabs" id="historicoTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="relatorios-tab" data-bs-toggle="tab" data-bs-target="#relatorios-pane" type="button" role="tab">Relatórios Enviados</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="demandas-tab" data-bs-toggle="tab" data-bs-target="#demandas-pane" type="button" role="tab">Demandas Concluídas</button>
+        </li>
+    </ul>
+
+    <!-- Conteúdo das Abas -->
+    <div class="tab-content" id="historicoTabContent">
+        <!-- Aba de Relatórios -->
+        <div class="tab-pane fade show active" id="relatorios-pane" role="tabpanel">
+            <div class="card card-tab">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead><tr><th>Enviado Em</th><th>Usuário</th><th>Loja</th><th>Data do Relatório</th></tr></thead>
+                            <tbody id="historico-relatorios-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Aba de Demandas -->
+        <div class="tab-pane fade" id="demandas-pane" role="tabpanel">
+            <div class="card card-tab">
+                 <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead><tr><th>Concluído Em</th><th>Usuário</th><th>Loja</th><th>Descrição</th></tr></thead>
+                            <tbody id="historico-demandas-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container-fluid" style="max-width: 960px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Gerenciar Lojas</h1>
+        <button class="btn btn-primary" id="btn-adicionar-loja"><i class="bi bi-plus-circle me-1"></i> Adicionar Nova Loja</button>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">Lojas Cadastradas</div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead><tr><th>Nome</th><th>Status</th><th>Função Especial</th><th>Observações</th><th class="text-end pe-3">Ações</th></tr></thead>
+                    <tbody id="tabela-lojas-corpo"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Adicionar/Editar Loja -->
+    <div class="modal fade" id="modal-loja" tabindex="-1" aria-labelledby="modalLojaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="form-loja">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLojaLabel">Adicionar Loja</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="loja-id">
+                        <div class="mb-3">
+                            <label for="loja-nome" class="form-label">Nome da Loja</label>
+                            <input type="text" class="form-control" id="loja-nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loja-status" class="form-label">Status</label>
+                            <select class="form-select" id="loja-status">
+                                <option value="ativa">Ativa</option>
+                                <option value="inativa">Inativa</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loja-funcao-especial" class="form-label">Grupo da Loja (Função Especial)</label>
+                            <select class="form-select" id="loja-funcao-especial">
+                                <option value="" selected>Nenhuma</option>
+                                <option value="Omni">Omni</option>
+                                <option value="Busca por Assist. Tec.">Busca por Assist. Tec.</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loja-observacoes" class="form-label">Observações</label>
+                            <textarea class="form-control" id="loja-observacoes" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container-fluid" style="max-width: 1200px;">
+    <!-- CARD DE FILTROS -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form id="form-filtros-dashboard" class="row gx-3 gy-2 align-items-end">
+                <div class="col-lg-4 col-md-6"><label for="filtro-loja-dashboard" class="form-label">Loja</label><select id="filtro-loja-dashboard" class="form-select"><option value="todas" selected>Todas as Lojas</option></select></div>
+                <div class="col-lg-3 col-md-6"><label for="filtro-data-inicio-dashboard" class="form-label">De:</label><input type="date" class="form-control" id="filtro-data-inicio-dashboard"></div>
+                <div class="col-lg-3 col-md-6"><label for="filtro-data-fim-dashboard" class="form-label">Até:</label><input type="date" class="form-control" id="filtro-data-fim-dashboard"></div>
+                <div class="col-lg-2 col-md-6 d-flex"><button type="submit" class="btn btn-primary w-100 me-2">Analisar</button><button type="button" id="btn-limpar-filtros-dashboard" class="btn btn-outline-secondary w-100">Limpar</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- TÍTULO DO DASHBOARD -->
+    <h4 class="mb-3">Dashboard Geral</h4>
+    
+    <!-- CARDS DE MÉTRICAS -->
+    <div class="row">
+        <div class="col-xl-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header"><i class="bi bi-display me-2"></i>Monitoramento</div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-6"><h3 class="mb-0" id="geral-clientes">0</h3><small>CLIENTES</small></div>
+                        <div class="col-6"><h3 class="mb-0" id="geral-vendas">0</h3><small>VENDAS</small></div>
+                    </div>
+                    <div class="text-center mt-3"><h2 class="mb-0" id="geral-tx-conversao">0.00%</h2><small>TAXA DE CONVERSÃO</small></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header"><i class="bi bi-shop me-2"></i>Loja (Bluve)</div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-6"><h3 class="mb-0" id="loja-clientes">0</h3><small>CLIENTES</small></div>
+                        <div class="col-6"><h3 class="mb-0" id="loja-vendas">0</h3><small>VENDAS</small></div>
+                    </div>
+                    <div class="text-center mt-3"><h2 class="mb-0" id="loja-tx-conversao">0.00%</h2><small>TAXA DE CONVERSÃO</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CARD DO RANKING -->
+    <div class="row">
+        <div class="col-12">
+            <div id="ranking-card" class="card">
+                <div class="card-header"><i class="bi bi-award-fill me-2"></i>Ranking de Lojas por Conversão</div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead><tr><th>Pos.</th><th>Loja</th><th>Tx. Conv. Loja</th><th>Tx. Conv. Monit.</th><th>Vendas Loja</th><th>Clientes Loja</th></tr></thead>
+                            <tbody id="ranking-corpo-tabela"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

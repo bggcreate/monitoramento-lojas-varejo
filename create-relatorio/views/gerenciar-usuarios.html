@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+                <i class="bi bi-people-fill me-2"></i>
+                Gerenciar Usuários
+            </div>
+            <button id="btn-adicionar-usuario" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-lg me-1"></i> Adicionar Usuário
+            </button>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th class="ps-3">ID</th>
+                            <th>Username</th>
+                            <th>Cargo (Role)</th>
+                            <th class="text-end pe-3">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-usuarios-corpo">
+                        <!-- Usuários serão carregados aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Adicionar/Editar Usuário -->
+<div class="modal fade" id="modal-usuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="form-usuario">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalUsuarioLabel">Adicionar Novo Usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="usuario-id">
+                    <div class="mb-3">
+                        <label for="usuario-username" class="form-label">Nome de Usuário (Username)</label>
+                        <input type="text" class="form-control" id="usuario-username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="usuario-password" class="form-label">Senha (Password)</label>
+                        <input type="password" class="form-control" id="usuario-password">
+                        <small class="form-text text-muted">Deixe em branco para não alterar a senha existente.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="usuario-role" class="form-label">Cargo (Role)</label>
+                        <select id="usuario-role" class="form-select">
+                            <option value="user">Usuário Padrão</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

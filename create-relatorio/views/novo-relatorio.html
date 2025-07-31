@@ -1,0 +1,63 @@
+<!-- CORREÇÃO: Adicionamos o ID ao formulário principal -->
+<form id="form-novo-relatorio">
+    <div class="container-fluid" style="max-width: 1200px;">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row g-3 align-items-end">
+                    <div class="col-md-8"><label for="loja" class="form-label">Loja</label><select id="loja" name="loja" class="form-select form-select-lg" required></select></div>
+                    <div class="col-md-4"><label for="data" class="form-label">Data</label><input type="date" id="data" name="data" class="form-control form-control-lg" required></div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="card h-100">
+                    <div class="card-header"><h5 class="mb-0">Métricas do Dia</h5></div>
+                    <div class="card-body">
+                        <h6><i class="bi bi-display me-2"></i>Fluxo & Vendas</h6>
+                        <div class="row g-3 mb-3">
+                            <div class="col"><label class="form-label">Clientes Monit.</label><input type="number" name="clientes_monitoramento" class="form-control" value="0"></div>
+                            <div class="col"><label class="form-label">Vendas Monit.</label><input type="number" name="vendas_monitoramento" class="form-control" value="0"></div>
+                            <div class="col"><label class="form-label">Clientes Loja</label><input type="number" name="clientes_loja" class="form-control" value="0"></div>
+                            <div class="col"><label class="form-label">Vendas Loja</label><input type="number" name="vendas_loja" class="form-control" value="0"></div>
+                        </div><hr>
+                        <h6><i class="bi bi-cash-coin me-2"></i>Formas de Pagamento e Outros</h6>
+                        <div class="row g-3">
+                            <div class="col-6 col-md-3"><label class="form-label">Cartão</label><input type="number" name="vendas_cartao" class="form-control" value="0"></div>
+                            <div class="col-6 col-md-3"><label class="form-label">PIX</label><input type="number" name="vendas_pix" class="form-control" value="0"></div>
+                            <div class="col-6 col-md-3"><label class="form-label">Dinheiro</label><input type="number" name="vendas_dinheiro" class="form-control" value="0"></div>
+                            <div class="col-6 col-md-3"><label class="form-label">Trocas</label><input type="number" name="quantidade_trocas" class="form-control" value="0"></div>
+                            <div id="container-funcao-especial" class="col-12" style="display: none;">
+                               <div id="campo-omni" style="display: none;" class="mt-2"><label class="form-label">Qtd. Omni</label><input type="number" name="quantidade_omni" class="form-control" value="0"></div>
+                               <div id="campo-busca-assist" style="display: none;" class="mt-2"><label class="form-label">Qtd. Busca por Assist. Tec.</label><input type="number" name="quantidade_funcao_especial" class="form-control" value="0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="vstack gap-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center"><h5 class="mb-0">Desempenho da Equipe</h5><button type="button" id="btn-add-vendedor" class="btn btn-primary btn-sm">+</button></div>
+                        <div class="card-body">
+                            <p id="vendedores-placeholder" class="text-center text-muted m-0">Clique em '+' para adicionar um vendedor.</p>
+                            <div id="container-vendedores" class="vstack gap-2"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h5 class="mb-0">Horários</h5></div>
+                        <div class="card-body">
+                            <label class="form-label">Horário Loja</label>
+                            <div class="input-group mb-3"><input type="time" name="hora_abertura" class="form-control"><span class="input-group-text">às</span><input type="time" name="hora_fechamento" class="form-control"></div>
+                            <label class="form-label">Horário Gerente</label>
+                            <div class="input-group"><input type="time" name="gerente_entrada" class="form-control"><span class="input-group-text">às</span><input type="time" name="gerente_saida" class="form-control"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid mt-4">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-salvar-tudo">SALVAR RELATÓRIO COMPLETO</button>
+        </div>
+    </div>
+</form>

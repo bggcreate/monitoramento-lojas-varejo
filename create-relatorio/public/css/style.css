@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+/* ============================================================
+   VARIÁVEIS
+============================================================ */
+:root {
+    --sidebar-width: 250px;
+    --main-bg: #111111;
+    --content-bg: #1C1C1C;
+    --hover-bg: #000000;
+    --border-color: #333333;
+    --accent-color: #ff7b00;
+    --color-status-ativa: #22c55e;
+    --color-success: #2ea043;
+    --text-light: #ffffff;
+    --text-muted: #b0b0b0;
+    --text-input-color: #e5e7eb;
+    --border-radius-large: 16px;
+    --border-radius-small: 8px;
+    --shadow-main: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    --transition-speed: 0.2s;
+    --neon-glow-orange: 0 0 12px rgba(255, 123, 0, 0.6);
+    --neon-glow-green: 0 0 12px rgba(46, 160, 67, 0.6);
+    --neon-glow-grey: 0 0 12px rgba(108, 117, 125, 0.4);
+}
+
+/* ============================================================
+   GERAL
+============================================================ */
+body, body *, .card, .card *, .modal, .modal * {
+    color: var(--text-light) !important;
+}
+
+body {
+    background-color: var(--main-bg) !important;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+}
+
+.page-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+main.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 2.5rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#page-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h4.mb-3 {
+    font-weight: 700;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+small {
+    color: var(--text-muted) !important;
+}
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+aside.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--content-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-main);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header i {
+    color: var(--accent-color) !important;
+    font-size: 1.8rem;
+}
+
+.sidebar-nav {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0;
+    flex-grow: 1;
+    margin-top: 1.5rem;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 0.25rem !important;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius-small);
+    color: var(--text-muted) !important;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--text-light) !important;
+    background-color: var(--hover-bg);
+}
+
+.nav-item.active .nav-link {
+    color: var(--text-light) !important;
+    background-color: var(--main-bg);
+    font-weight: 600;
+}
+
+.nav-item.active .nav-link i {
+    color: var(--accent-color) !important;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#user-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#user-info-container .user-info {
+    font-weight: 600;
+}
+
+#user-info-container .user-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#user-info-container .btn {
+    background-color: transparent !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+}
+
+#user-info-container .btn:hover {
+    background-color: var(--hover-bg) !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+/* ============================================================
+   COMPONENTES GERAIS
+============================================================ */
+.card, .modal-content, .alert, .list-group-item {
+    background-color: var(--content-bg) !important;
+    border-radius: var(--border-radius-large) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-main);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    font-weight: 600;
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 1rem 1.5rem;
+}
+
+/* ============================================================
+   FORMULÁRIOS
+============================================================ */
+.form-control,
+.form-select,
+.input-group-text {
+    background-color: var(--main-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-input-color) !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* ============================================================
+   BOTÕES
+============================================================ */
+.btn {
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    border-radius: var(--border-radius-small);
+}
+
+.btn-primary {
+    background-color: var(--accent-color) !important;
+    color: var(--main-bg) !important;
+    border: none !important;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+    background-color: #333333 !important;
+    border: 1px solid #444 !important;
+    color: var(--text-input-color) !important;
+}
+
+.btn-success {
+    background-color: var(--color-success) !important;
+    color: var(--text-light) !important;
+    border: none !important;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--neon-glow-orange);
+}
+
+.btn-success:hover {
+    box-shadow: var(--neon-glow-green);
+}
+
+.btn-secondary:hover,
+.btn-outline-secondary:hover {
+    box-shadow: var(--neon-glow-grey);
+}
+
+/* ============================================================
+   TABELA
+============================================================ */
+.table {
+    background-color: transparent !important;
+}
+
+.table th,
+.table td {
+    background-color: transparent !important;
+    color: var(--text-light) !important;
+    border-color: var(--border-color) !important;
+}
+
+.table thead th {
+    color: var(--text-muted) !important;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-bottom-width: 2px !important;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: var(--hover-bg) !important;
+    color: var(--accent-color) !important;
+}
+
+.table-hover > tbody > tr:hover > * {
+    color: var(--accent-color) !important;
+}
+
+/* ============================================================
+   NAV TABS / BADGES
+============================================================ */
+.nav-tabs {
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+.nav-tabs .nav-link {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    color: var(--text-muted) !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--text-light) !important;
+    border-bottom-color: var(--accent-color) !important;
+}
+
+.badge.bg-success {
+    background-color: rgba(34, 197, 94, 0.2) !important;
+    color: var(--color-status-ativa) !important;
+}
+
+.badge.bg-secondary {
+    background-color: rgba(136, 136, 136, 0.2) !important;
+    color: var(--text-muted) !important;
+}

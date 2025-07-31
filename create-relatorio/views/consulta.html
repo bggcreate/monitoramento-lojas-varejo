@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <!-- Card de Filtros -->
+    <div class="card mb-4">
+        <div class="card-header"><i class="bi bi-filter me-2"></i>Filtrar Relatórios</div>
+        <div class="card-body">
+            <form id="form-filtros-consulta" class="row g-3 align-items-end">
+                <div class="col-lg-4 col-md-12"><label for="filtro-loja" class="form-label">Loja</label><select id="filtro-loja" class="form-select"></select></div>
+                <div class="col-lg-3 col-md-6"><label for="filtro-data-inicio" class="form-label">De:</label><input type="date" id="filtro-data-inicio" class="form-control"></div>
+                <div class="col-lg-3 col-md-6"><label for="filtro-data-fim" class="form-label">Até:</label><input type="date" id="filtro-data-fim" class="form-control"></div>
+                <div class="col-lg-2 col-md-12 d-flex"><button type="submit" class="btn btn-primary flex-grow-1">Filtrar</button><button type="button" id="btn-limpar-filtros" class="btn btn-secondary ms-2">Limpar</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Card de Exportação -->
+    <div class="card mb-4">
+        <div class="card-header"><i class="bi bi-file-earmark-excel me-2"></i>Exportar para Excel</div>
+        <div class="card-body">
+             <form id="form-export-excel" class="row g-3 align-items-end">
+                <div class="col-lg-4 col-md-6">
+                    <label for="export-month" class="form-label">Mês</label>
+                    <select id="export-month" class="form-select">
+                        <option value="1">Janeiro</option><option value="2">Fevereiro</option><option value="3">Março</option>
+                        <option value="4">Abril</option><option value="5">Maio</option><option value="6">Junho</option>
+                        <option value="7">Julho</option><option value="8">Agosto</option><option value="9">Setembro</option>
+                        <option value="10">Outubro</option><option value="11">Novembro</option><option value="12">Dezembro</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="export-year" class="form-label">Ano</label>
+                    <select id="export-year" class="form-select"></select>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <button type="submit" class="btn btn-success w-100">Exportar Mês Selecionado</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Card da Tabela de Resultados -->
+    <div class="card">
+        <div class="card-header"><i class="bi bi-list-ul me-2"></i>Resultados</div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead><tr><th class="ps-3" style="width: 5%;">#</th><th style="width: 45%;">Loja</th><th style="width: 20%;">Data</th><th class="text-end pe-3" style="width: 30%;">Ações</th></tr></thead>
+                    <tbody id="tabela-relatorios-corpo"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer text-center" id="footer-carregar-mais">
+            <button class="btn btn-outline-secondary d-none" id="btn-carregar-mais">Carregar Mais Relatórios</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Visualização de Relatório -->
+<div class="modal fade" id="modal-visualizar-relatorio" tabindex="-1" aria-labelledby="modal-visualizar-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-visualizar-label">Visualizar Relatório</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body-content" style="padding: 0; min-height: 70vh;">
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <div>
+                    <button type="button" class="btn btn-primary" id="btn-copiar-texto-modal"><i class="bi bi-clipboard-check"></i> Copiar .txt</button>
+                    <button type="button" class="btn btn-danger" id="btn-gerar-pdf-modal"><i class="bi bi-file-earmark-pdf"></i> Abrir PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

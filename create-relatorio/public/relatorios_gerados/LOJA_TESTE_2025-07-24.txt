@@ -1,0 +1,23 @@
+LOJA TESTE
+
+DATA: 24/07/2025
+
+Clientes: 0
+Bluve: 0
+Vendas / Monitoramento: 0
+Vendas / Loja: 0
+Taxa de conversão da loja: 0,00%
+Taxa de conversão do monitoramento: 0,00%
+
+Abertura: 00:00 - 00:00
+Gerente: 00:00 - 00:00
+Vendas em Cartão: 0
+Vendas em Pix: 0
+Vendas em Dinheiro: 0
+Total vendas: 0
+Troca/Devolução: 0
+
+Desempenho Equipe:
+
+tteste: 1 Atendimentos / 1 Vendas / 100,00%
+teste: 2 Atendimentos / 2 Vendas / 100,00%
